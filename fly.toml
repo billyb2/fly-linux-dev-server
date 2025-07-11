@@ -1,0 +1,25 @@
+app = "linux-dev-server"
+primary_region = "ord"
+
+[build]
+
+[env]
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 2222
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[services.ports]]
+    port = 22
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 8
+  memory_mb = 16384
+
+[mounts]
+  source = "persistent"
+  destination = "/persistent"
