@@ -1,8 +1,11 @@
 FROM ubuntu:24.04
 
-RUN apt-get update && apt-get install -y \
+RUN --mount=type=cache,target=/var/cache/apt \
+    --mount=type=cache,target=/var/lib/apt \
+    apt-get update && apt-get install -y \
     openssh-server \
     rsync \
+    docker.io \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/run/sshd
