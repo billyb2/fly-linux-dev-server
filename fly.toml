@@ -1,5 +1,6 @@
 app = "linux-dev-server"
 primary_region = "ord"
+primary_region = "lax"
 
 [build]
 
@@ -16,9 +17,9 @@ primary_region = "ord"
     port = 22
 
 [[vm]]
-  cpu_kind = "shared"
-  cpus = 8
-  memory_mb = 16384
+  cpu_kind = "performance"
+  cpus = 16
+  memory_mb = 32768
 
 [mounts]
   source = "persistent"
